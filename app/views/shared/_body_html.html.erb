@@ -1,0 +1,65 @@
+<body class="wm">
+  <div class="top-bg"></div>
+  <div class="container">
+    <div class="col-sm-4 logo-wrap"><%= logo %> </div>
+    <div class="col-sm-8 head-l">
+      <div class="top-bar">
+        <div class="tag">Legends Universe, LLC</div>
+        <div class="user-cart">
+          <ul>
+            <li><a href=""><span class="cart"></span>Cart ($99.99)</a></li>
+            <li><a href="">Login/Register</a><span class="shine"></span></li>
+            <li class="dropdown">
+              <form>
+                <input type="submit" class="dropdown-toggle mag" data-toggle="dropdown" value="" />
+                <div class="dropdown-menu">
+                  <input type="text" class="in" placeholder="Search Comic Here" />
+                </div>
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <nav class="navbar" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <h6 class="toh">Main Menu</h6>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <% @taxonomies.each do |taxonomy| %>
+                <li><%= taxons_tree(taxonomy.root, @taxon, Spree::Config[:max_level_in_taxons_menu] || 1) %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    
+  </div>
+  <%= breadcrumbs(@taxon) %>
+  <%= flash_messages %>
+  <%= yield %>
+
+  <div class="footer">
+    <div class="footer-inner">
+      <div class="container">
+        <div class="row"> <a class="logo-s"></a>
+          <ul class="social">
+            <p class="text">Connect With us</p>
+            <li><a href="" class=""></a></li>
+            <li><a href="" class="fl"></a></li>
+            <li><a href="" class="g"></a></li>
+            <li><a href="" class="i"></a></li>
+            <li><a href="" class="t"></a></li>
+            <p class="text">info@Legenduniverse.com</p>
+          </ul>
+          <div class="clearfix"></div>
+          <p class="text-center text">Copyright © 2014, The Legend Universe | Designed By <a href="http://www.weblogsolutions.com">WeblogSolutions</a> </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>

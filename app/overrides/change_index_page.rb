@@ -1,0 +1,12 @@
+Deface::Override.new(:virtual_path => "spree/home/index",
+                     :name => "change_index_page_1",
+                     :insert_before => "[data-hook='homepage_products']",
+                     :partial => "shared/wrapper_box")
+Deface::Override.new(:virtual_path => "spree/home/index",
+                     :name => "change_index_page_2",
+                     :insert_after => "[data-hook='homepage_products']",
+                     :partial => "shared/index_bottom")
+Deface::Override.new(:virtual_path => "spree/home/index",
+                     :name => "change_index_page_3",
+                     :insert_after => "#about_comics",
+                     :partial => "shared/testimonial")
